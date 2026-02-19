@@ -10,7 +10,9 @@ document.getElementById('login-btn')
 
     // match the mobile and pin
     if(contactNumber == "01234567890" && pin == '1234'){
-        alert('Login success')
+        alert('Login success');
+        window.location.assign('/home.html')
+
     }
     else{
         alert('login Failed')
