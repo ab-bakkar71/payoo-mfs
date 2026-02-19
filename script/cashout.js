@@ -9,7 +9,7 @@ document.getElementById('cashout-btn').addEventListener('click', function(){
     }
     
     // get the Amount
-    const cashOutAmount = getValueFromInput('amount-number');
+    const cashOutAmount = getValueFromInput('cashout-number');
 
     // get the current balance
     const currentBalance =getBalance()
@@ -24,6 +24,21 @@ document.getElementById('cashout-btn').addEventListener('click', function(){
     if(pin == 1234){
         alert('cashOut Success')
         setBalance(newBalance);
+
+        const history = document.getElementById('history-container')
+
+    // create new div
+    const newHistory = document.createElement('div');
+
+    // added innerHTML on newHistory div
+    newHistory.innerHTML = `
+    <div class="transaction-card p-5 bg-base-100 mt-4">
+    CashOut ${cashOutAmount} taka Success, Agent Number:
+    ${agentNumber}, at ${new Date()}
+    </div>
+    `
+    // append on history
+    history.append(newHistory);
     }
     else{
         alert('invalid Pin')
