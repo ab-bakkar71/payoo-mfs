@@ -1,5 +1,7 @@
 // machine id input value
 
+
+
 function getValueFromInput(id){
     const input = document.getElementById(id);
     const value = input.value;
@@ -29,13 +31,16 @@ function showOnly(id){
     const addMoney = document.getElementById('add-balance');
     const cashOut = document.getElementById('cashout');
     const history = document.getElementById('history');
+    const sendMoney= document.getElementById('send-money')
     // console.log(`add money- ${addMoney}, cash Out- ${cashOut}`)
     // hide all
     addMoney.classList.add('hidden');
     cashOut.classList.add('hidden');
-    history.classList.add('hidden')
+    history.classList.add('hidden');
+    sendMoney.classList.add('hidden');
 
     // show only id element 
     const selected = document.getElementById(id);
     selected.classList.remove('hidden')
 }
+
